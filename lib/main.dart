@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salevy_frontend/theme/color_schemes.dart';
-
 void main(List<String> args) {
   runApp(const SalevyApp());
 }
