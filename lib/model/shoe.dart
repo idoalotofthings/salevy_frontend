@@ -1,18 +1,31 @@
-/// Model class Shoe 
+import 'package:flutter/widgets.dart';
+
+/// Model class Shoe
 /// Use it only for storing types of shoes available for displaying on the website
 /// This class is a data class, do not extend it, or add methods to it
 /// Use EXTENSION FUNCTIONS ONLY for adding more functionality to this
 class Shoe {
-  String name; /// name of the shoe 
-  double price; /// price of the show
-  String description; /// describe the product. Not more than 20 chars
-  String origin; /// country of origin
+  /// name of the show
+  String name;
+
+  /// price of the show
+  double price;
+
+  /// describe the shoe
+  String description;
+
+  /// country of origin
+  String origin;
+
+  /// Path to image asset
+  AssetImage image;
 
   Shoe(
       {required this.name,
       required this.price,
       required this.description,
-      required this.origin});
+      required this.origin,
+      required this.image});
 
   @override
   String toString() {
@@ -21,19 +34,25 @@ class Shoe {
     buffer.write("name = $name, ");
     buffer.write("price = $price, ");
     buffer.write("description = $description, ");
-    buffer.write("origin = $origin");
+    buffer.write("origin = $origin, ");
+    buffer.write("image = ${image.assetName}");
 
     return buffer.toString();
   }
 
   /// Use this method if you want an object which is the copy of another object, but with some changes
   Shoe copy(
-      {String? name, double? price, String? description, String? origin}) {
+      {String? name,
+      double? price,
+      String? description,
+      String? origin,
+      AssetImage? image}) {
     return Shoe(
         name: name ?? this.name,
         price: price ?? this.price,
         description: description ?? this.description,
-        origin: origin ?? this.origin);
+        origin: origin ?? this.origin,
+        image: image ?? this.image);
   }
 
   /// Use this method for comparing two shoe objects
@@ -41,7 +60,8 @@ class Shoe {
     if (name == shoe.name &&
         price == shoe.price &&
         description == shoe.description &&
-        origin == shoe.origin) {
+        origin == shoe.origin &&
+        image.assetName == shoe.image.assetName) {
       return true;
     } else {
       return false;
