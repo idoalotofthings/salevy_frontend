@@ -27,6 +27,8 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
           child: CarouselSlider(
             items: shoeCardList,
             options: CarouselOptions(
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 15),
                 enlargeCenterPage: true,
                 height: 800,
                 initialPage: 2,
