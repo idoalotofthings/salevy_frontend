@@ -7,7 +7,9 @@ extension ListUtil on List {
     var formattedList = [];
 
     for (int i in List.generate(to, (index) => index)) {
-      formattedList.add(this[i]);
+      if (i >= from) {
+        formattedList.add(this[i]);
+      }
     }
 
     return formattedList;
