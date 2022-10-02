@@ -1,5 +1,5 @@
 name: salevy_frontend
-description: A new Flutter project.
+description: Frontend for advertising the "Salevy" sneakers brand
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts:
   carousel_slider:
+  animations:
 
 dev_dependencies:
   flutter_test:
