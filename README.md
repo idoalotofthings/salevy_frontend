@@ -1,16 +1,7 @@
-# salevy_frontend
+# Salevy Frontend
 
-A new Flutter project.
+Website for advertising the "Salevy" sneakers brand
 
-## Getting Started
+This website has been created using Flutter, targeting web. Checkout pubspec for knowing the dependencies of this project.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Special thanks to the creators of the libraries used in this project.
