@@ -4,16 +4,17 @@ import 'package:salevy_frontend/model/shoe.dart';
 
 class ShoeCard extends StatelessWidget {
   final Shoe shoe;
+  final void Function() callback;
 
-  const ShoeCard(this.shoe, {super.key});
+  const ShoeCard(this.shoe, {required this.callback, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      width: 300,
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
+    return GestureDetector(
+      onTap: callback,
+      child: SizedBox(
+        height: 300,
+        width: 300,
         child: Card(
           elevation: 16,
           child: Column(
