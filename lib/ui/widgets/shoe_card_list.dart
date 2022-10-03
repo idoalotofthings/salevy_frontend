@@ -12,7 +12,7 @@ List<Widget> generateShoeCardList(List<Shoe> shoeList) {
     list.add(OpenContainer(
       transitionDuration: const Duration(milliseconds: 400),
       closedBuilder: (context, action) => ShoeCard(shoe, callback: action),
-      openBuilder: (context, _) => const ProductDetailsRoute(),
+      openBuilder: (context, _) => ProductDetailsRoute(shoe),
     ));
   }
 

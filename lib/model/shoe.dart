@@ -26,6 +26,7 @@ class Shoe {
       required this.description,
       required this.origin,
       required this.image});
+  //constructor
 
   @override
   String toString() {

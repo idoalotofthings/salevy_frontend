@@ -31,6 +31,7 @@ class _SalevyAppState extends State<SalevyApp> {
       darkTheme: ThemeData(colorScheme: darkColorScheme, useMaterial3: true),
       themeMode: themeMode,
       home: MainRoute(themeMode: themeMode),
+      //home page to entrypoint_webpage
     );
   }
 }

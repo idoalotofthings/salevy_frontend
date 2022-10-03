@@ -40,6 +40,7 @@ class MainRoute extends StatelessWidget {
           height: 400,
           alignment: Alignment.topCenter,
           child: const SizedBox(width: 1150, child: ProductShowcaseWidget()),
+          //getting widget from product_showcase_widget
         ));
   }
 }
