@@ -7,7 +7,7 @@ import 'package:simple_animated_icon/simple_animated_icon.dart';
 class MainRoute extends StatefulWidget {
   final ThemeMode themeMode;
 
-  MainRoute({required this.themeMode, super.key});
+  const MainRoute({required this.themeMode, super.key});
 
   @override
   State<MainRoute> createState() => _MainRouteState();
