@@ -20,6 +20,8 @@ class _SalevyAppState extends State<SalevyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // See LiveData$observe
+    // calls the method passed as the parameter whenever the value of the theme changes
     viewModel.theme.observe((newValue) {
       setState(() {
         themeMode = newValue;

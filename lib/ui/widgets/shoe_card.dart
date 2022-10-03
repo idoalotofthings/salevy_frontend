@@ -4,7 +4,7 @@ import 'package:salevy_frontend/model/shoe.dart';
 
 class ShoeCard extends StatelessWidget {
   final Shoe shoe;
-  final void Function() callback;
+  final void Function() callback; // callback function for onTap. 
 
   const ShoeCard(this.shoe, {required this.callback, super.key});
 

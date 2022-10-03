@@ -1,6 +1,7 @@
+// Generic LiveData class which doesn't allow changing the value. To be used for exposing MutableLiveData outside of a ViewModel
 class LiveData<T> {
-  T currentValue;
-  void Function(T newValue)? onChange;
+  T currentValue;  // Lookup Generics
+  void Function(T newValue)? onChange;  
 
   LiveData({required this.currentValue});
 

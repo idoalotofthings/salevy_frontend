@@ -4,6 +4,7 @@ import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
 
+// Entrypoint webpage of the application.
 class MainRoute extends StatefulWidget {
   final ThemeMode themeMode;
 
@@ -16,13 +17,14 @@ class MainRoute extends StatefulWidget {
 class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
   final viewModel = ThemeViewModel();
 
-  late AnimationController _animationController;
+  late AnimationController _animationController; // AnimationController for the theme icon
   late Animation<double> _progress;
 
   @override
   void initState() {
     super.initState();
 
+    // Calls the build method while the animation is in progress
     _animationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 2000))
       ..addListener(() {
