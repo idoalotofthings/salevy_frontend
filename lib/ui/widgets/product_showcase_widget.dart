@@ -11,38 +11,53 @@ class ProductShowcaseWidget extends StatefulWidget {
 
 class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
   final _controller = CarouselController();
+  var viewportFraction = 0.3;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: IconButton(
-              onPressed: () => _controller.previousPage(),
-              icon: const Icon(Icons.chevron_left)),
-        ),
-        SizedBox(
-          width: 1000,
-          child: CarouselSlider(
-            items: shoeCardList,
-            options: CarouselOptions(
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 15),
-                enlargeCenterPage: true,
-                height: 800,
-                initialPage: 2,
-                viewportFraction: 0.3),
-            carouselController: _controller,
+    var screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth < 700) {
+      setState(() {
+        viewportFraction = 0.8;
+      });
+    } else {
+      setState(() {
+        viewportFraction = 0.3;
+      });
+    }
+
+    return SizedBox(
+      width: screenWidth,
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: IconButton(
+                onPressed: () => _controller.previousPage(),
+                icon: const Icon(Icons.chevron_left)),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: IconButton(
-              onPressed: () => _controller.nextPage(),
-              icon: const Icon(Icons.chevron_right)),
-        ),
-      ],
+          SizedBox(
+            width: MediaQuery.of(context).size.width - 150,
+            child: CarouselSlider(
+              items: shoeCardList,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 15),
+                  enlargeCenterPage: true,
+                  height: 800,
+                  viewportFraction: viewportFraction),
+              carouselController: _controller,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: IconButton(
+                onPressed: () => _controller.nextPage(),
+                icon: const Icon(Icons.chevron_right)),
+          ),
+        ],
+      ),
     );
   }
 }

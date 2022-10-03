@@ -4,7 +4,7 @@ import 'package:salevy_frontend/model/shoe.dart';
 
 class ShoeCard extends StatelessWidget {
   final Shoe shoe;
-  final void Function() callback;
+  final void Function() callback; // callback function for onTap. 
 
   const ShoeCard(this.shoe, {required this.callback, super.key});
 
@@ -27,9 +27,13 @@ class ShoeCard extends StatelessWidget {
                   height: 200,
                 ),
               ),
-              Text(
-                shoe.name,
-                style: GoogleFonts.passionsConflict(fontSize: 48),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  shoe.name,
+                  style: GoogleFonts.passionsConflict(fontSize: 48),
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),

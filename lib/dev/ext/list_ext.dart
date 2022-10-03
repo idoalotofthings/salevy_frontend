@@ -1,8 +1,12 @@
+// Utility extension on List
 extension ListUtil on List {
+
+  // Create a copy of a list using this. DON'T use = operator, it will point to the same List
   List copy() {
     return this;
   }
 
+  // Allows you to get specific elements of a list
   List getElements(int from, int to) {
     var formattedList = [];
 
