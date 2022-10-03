@@ -27,9 +27,13 @@ class ShoeCard extends StatelessWidget {
                   height: 200,
                 ),
               ),
-              Text(
-                shoe.name,
-                style: GoogleFonts.passionsConflict(fontSize: 48),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  shoe.name,
+                  style: GoogleFonts.passionsConflict(fontSize: 48),
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),

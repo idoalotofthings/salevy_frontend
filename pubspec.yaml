@@ -39,6 +39,7 @@ dependencies:
   google_fonts:
   carousel_slider:
   animations:
+  simple_animated_icon: ^1.1.0
 
 dev_dependencies:
   flutter_test:
