@@ -11,9 +11,23 @@ class ProductShowcaseWidget extends StatefulWidget {
 
 class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
   final _controller = CarouselController();
+  var viewportFraction = 0.3;
 
   @override
   Widget build(BuildContext context) {
+
+    var screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth < 700) {
+      setState(() {
+        viewportFraction = 0.8;
+      });
+    } else {
+      setState(() {
+        viewportFraction = 0.3;
+      });
+    }
+
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -32,7 +46,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
             ),
           ),
           SizedBox(
-            width: 1000,
+            width: MediaQuery.of(context).size.width - 150,
             child: CarouselSlider(
               items: shoeCardList,
               options: CarouselOptions(
@@ -40,8 +54,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
                   autoPlayInterval: const Duration(seconds: 15),
                   enlargeCenterPage: true,
                   height: 800,
-                  initialPage: 2,
-                  viewportFraction: 0.3),
+                  viewportFraction: viewportFraction),
               carouselController: _controller,
             ),
           ),
@@ -53,6 +66,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
               iconSize: 80,
               color: Colors.white,
             ),
+
           ),
         ],
       ),
