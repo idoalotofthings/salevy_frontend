@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salevy_frontend/data/utility_datasource.dart';
 import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
+import 'package:salevy_frontend/ui/widgets/utility_card_text.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
 
 // Entrypoint webpage of the application.
@@ -16,6 +19,7 @@ class MainRoute extends StatefulWidget {
 
 class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
   final viewModel = ThemeViewModel();
+  late double screenWidth;
 
   late AnimationController
       _animationController; // AnimationController for the theme icon
@@ -43,6 +47,9 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      screenWidth = MediaQuery.of(context).size.width;
+    });
     _progress = Tween<double>(begin: 0, end: 10).animate(_animationController);
 
     return Scaffold(
@@ -78,26 +85,49 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                 ))
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 21.0),
-                child: Container(
-                  height: 400,
-                  alignment: Alignment.topCenter,
-                  child: const SizedBox(child: ProductShowcaseWidget()),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                    padding: const EdgeInsets.only(bottom: 21.0),
+                    child: Container(
+                        height: 500,
+                        width: screenWidth,
+                        alignment: Alignment.topCenter,
+                        child: const ProductShowcaseWidget())),
+                Padding(
+                  padding: const EdgeInsets.all(21.0),
+                  child: Text(
+                    "Sneakers for Everyone!",
+                    style: GoogleFonts.passionsConflict(
+                        fontSize: 64, fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(21.0),
-                child: Text(
-                  "Sneakers for Everyone!",
-                  style: GoogleFonts.passionsConflict(
-                      fontSize: 64, fontWeight: FontWeight.bold),
-                ),
-              )
-            ],
+                ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: utilities.length,
+                    itemBuilder: ((context, index) {
+                      if (index == 1) {
+                        return UtilityCardText(
+                          utilities[index],
+                          index: index,
+                          reverse: true,
+                        );
+                      } else {
+                        return UtilityCardText(
+                          utilities[index],
+                          index: index,
+                        );
+                      }
+                    })),
+                const Padding(
+                  padding: EdgeInsets.only(top: 16.0),
+                  child: AboutUsWidget(),
+                )
+              ],
+            ),
           ),
         ));
   }
