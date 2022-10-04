@@ -6,8 +6,10 @@ class ProductDetailsRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO: Create details page. cc @Enjoyinbreaks
-      appBar: AppBar(title: const Text("data"),),
+      // TODO: Create details page. cc @Enjoyinbreaks doing changes
+      appBar: AppBar(
+        title: const Text("data"),
+      ),
     );
   }
 }
