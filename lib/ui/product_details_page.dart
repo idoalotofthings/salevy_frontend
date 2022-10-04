@@ -8,7 +8,7 @@ class ProductDetailsRoute extends StatelessWidget {
     return Scaffold(
       // TODO: Create details page. cc @Enjoyinbreaks doing changes
       appBar: AppBar(
-        title: const Text("data"),
+        title: const Text("salevy"),
       ),
     );
   }
