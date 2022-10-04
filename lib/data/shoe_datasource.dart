@@ -3,7 +3,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:salevy_frontend/model/shoe.dart';
 
-var shoes = [
+final shoes = [
   Shoe(
       name: "Sporty Wind",
       price: 150,

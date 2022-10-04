@@ -8,19 +8,27 @@ class AboutUsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.onSurface,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.0),
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      height: 170,
       child: Column(
         children: [
-          Text(
-            "$aboutUs\n",
-            style: GoogleFonts.adventPro(
-              fontSize: 16
-            ),  
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "$aboutUs\n",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.adventPro(
+                  fontSize: 25, color: Theme.of(context).colorScheme.surface),
+            ),
           ),
-
-          
-
-
+          Text(
+            "$authors\n",
+            style: GoogleFonts.adventPro(
+                color: Theme.of(context).colorScheme.surface),
+          )
         ],
       ),
     );
