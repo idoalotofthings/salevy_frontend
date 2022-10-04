@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:salevy_frontend/str/str_res.dart';
+import 'package:salevy_frontend/res/str_res.dart';
 
 class AboutUsWidget extends StatelessWidget {
   const AboutUsWidget({super.key});

@@ -17,7 +17,8 @@ class MainRoute extends StatefulWidget {
 class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
   final viewModel = ThemeViewModel();
 
-  late AnimationController _animationController; // AnimationController for the theme icon
+  late AnimationController
+      _animationController; // AnimationController for the theme icon
   late Animation<double> _progress;
 
   @override
@@ -77,10 +78,27 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                 ))
           ],
         ),
-        body: Container(
-          height: 400,
-          alignment: Alignment.topCenter,
-          child: const SizedBox(width: 1150, child: ProductShowcaseWidget()),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 21.0),
+                child: Container(
+                  height: 400,
+                  alignment: Alignment.topCenter,
+                  child: const SizedBox(child: ProductShowcaseWidget()),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(21.0),
+                child: Text(
+                  "Sneakers for Everyone!",
+                  style: GoogleFonts.passionsConflict(
+                      fontSize: 64, fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
         ));
   }
 }
