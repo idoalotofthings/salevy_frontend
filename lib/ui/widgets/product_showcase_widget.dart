@@ -15,7 +15,6 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
 
   @override
   Widget build(BuildContext context) {
-
     var screenWidth = MediaQuery.of(context).size.width;
 
     if (screenWidth < 700) {
@@ -46,7 +45,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width - 150,
+            width: MediaQuery.of(context).size.width - 400,
             child: CarouselSlider(
               items: shoeCardList,
               options: CarouselOptions(
@@ -66,7 +65,6 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
               iconSize: 80,
               color: Colors.white,
             ),
-
           ),
         ],
       ),
