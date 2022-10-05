@@ -36,7 +36,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
               onPressed: () => _controller.previousPage(),
               icon: const Icon(Icons.chevron_left),
@@ -45,7 +45,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width - 400,
+            width: MediaQuery.of(context).size.width - 270,
             child: CarouselSlider(
               items: shoeCardList,
               options: CarouselOptions(
@@ -58,7 +58,7 @@ class _ProductShowcaseWidgetState extends State<ProductShowcaseWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(left: 16.0),
             child: IconButton(
               onPressed: () => _controller.nextPage(),
               icon: const Icon(Icons.chevron_right),

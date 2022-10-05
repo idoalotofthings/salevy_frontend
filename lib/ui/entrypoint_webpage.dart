@@ -114,11 +114,14 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                           utilities[index],
                           index: index,
                           reverse: true,
+                          visibilityKey:
+                               Key("congrats-easter-egg$index"),
                         );
                       } else {
                         return UtilityCardText(
                           utilities[index],
                           index: index,
+                          visibilityKey: Key("congrats-easter-egg$index"),
                         );
                       }
                     })),
