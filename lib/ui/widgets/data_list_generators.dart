@@ -2,7 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:salevy_frontend/data/shoe_datasource.dart';
 import 'package:salevy_frontend/ui/product_details_page.dart';
 import 'package:salevy_frontend/ui/widgets/shoe_card.dart';
-import 'package:salevy_frontend/model/shoe.dart';
+import 'package:salevy_frontend/model/shoe/shoe.dart';
 import 'package:flutter/material.dart';
 
 

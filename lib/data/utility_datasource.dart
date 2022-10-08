@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salevy_frontend/model/utility.dart';
+import 'package:salevy_frontend/model/utility/utility.dart';
 
 const utilities = [
   Utility(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:salevy_frontend/model/utility.dart';
+import 'package:salevy_frontend/model/utility/utility.dart';
 import '../../dev/ext/list_ext.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 

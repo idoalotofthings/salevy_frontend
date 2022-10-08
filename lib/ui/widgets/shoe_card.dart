@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:salevy_frontend/model/shoe.dart';
+import 'package:salevy_frontend/model/shoe/shoe.dart';
 import 'package:salevy_frontend/ui/animations/hover.dart';
 
 class ShoeCard extends StatelessWidget {
