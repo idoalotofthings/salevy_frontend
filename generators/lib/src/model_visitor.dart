@@ -7,7 +7,6 @@ class ModelVisitor extends SimpleElementVisitor<void> {
 
   @override
   void visitConstructorElement(ConstructorElement element) {
-    print("Eyo");
     final elementReturnType = element.type.returnType.toString();
 
     className = elementReturnType.replaceFirst("*", '');
