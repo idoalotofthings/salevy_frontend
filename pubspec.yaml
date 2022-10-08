@@ -42,7 +42,14 @@ dependencies:
   simple_animated_icon: ^1.1.0
   visibility_detector: ^0.3.3
 
+  annotations:
+    path: annotations/
+
+  generators:
+    path: generators/
+
 dev_dependencies:
+  build_runner:
   flutter_test:
     sdk: flutter
 

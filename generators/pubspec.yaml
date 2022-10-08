@@ -1,0 +1,23 @@
+name: generators
+description: Code generators for annotations
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0"
+
+dependencies:
+  # 1
+  build: 
+  # 2
+  source_gen:
+  # 3
+  annotations:
+    path: ../annotations/
+
+dev_dependencies:
+  # 4
+  build_runner: 2.2.1
+  # 5
+  build_test:
+  test: ^1.0.0
