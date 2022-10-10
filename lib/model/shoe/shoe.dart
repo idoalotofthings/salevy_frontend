@@ -12,4 +12,5 @@ class _AbsShoe {
   late String description;
   late String origin;
   late AssetImage image;
+  late AssetImage originImage;
 }
