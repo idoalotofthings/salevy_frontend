@@ -13,6 +13,7 @@ class Shoe {
   final String origin;
   final AssetImage image;
   final AssetImage originImage;
+  final List<Review> reviews;
 
   const Shoe({
     required this.name,
@@ -21,11 +22,12 @@ class Shoe {
     required this.origin,
     required this.image,
     required this.originImage,
+    required this.reviews,
   });
 
   @override
   String toString() {
-    return 'Shoe name = $name, price = $price, description = $description, origin = $origin, image = $image, originImage = $originImage';
+    return 'Shoe name = $name, price = $price, description = $description, origin = $origin, image = $image, originImage = $originImage, reviews = $reviews';
   }
 
   bool equals(Shoe shoe) {
@@ -34,7 +36,8 @@ class Shoe {
         description == shoe.description &&
         origin == shoe.origin &&
         image == shoe.image &&
-        originImage == shoe.originImage) {
+        originImage == shoe.originImage &&
+        reviews == shoe.reviews) {
       return true;
     } else {
       return false;
@@ -47,13 +50,15 @@ class Shoe {
       String? description,
       String? origin,
       AssetImage? image,
-      AssetImage? originImage}) {
+      AssetImage? originImage,
+      List<Review>? reviews}) {
     return Shoe(
         name: name ?? this.name,
         price: price ?? this.price,
         description: description ?? this.description,
         origin: origin ?? this.origin,
         image: image ?? this.image,
-        originImage: originImage ?? this.originImage);
+        originImage: originImage ?? this.originImage,
+        reviews: reviews ?? this.reviews);
   }
 }
