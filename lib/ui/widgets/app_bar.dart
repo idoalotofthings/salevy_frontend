@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
 
+// import '../favorites_page.dart';
+
 class SalevyAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final viewModel = ThemeViewModel();
+  final viewModel = SalevyViewModel();
   final String title;
 
   SalevyAppBar({required this.title, super.key});
@@ -61,11 +63,11 @@ class _SalevyAppBarState extends State<SalevyAppBar>
             child: IconButton(
               onPressed: () {
                 if (widget.viewModel.theme.value == ThemeMode.light) {
-                  widget.viewModel.theme.value = ThemeMode.dark;
+                  widget.viewModel.setThemeMode(ThemeMode.dark);
                   _animationController.forward();
                 } else {
                   _animationController.reverse();
-                  widget.viewModel.theme.value = ThemeMode.light;
+                  widget.viewModel.setThemeMode(ThemeMode.light);
                 }
               },
               icon: SimpleAnimatedIcon(
@@ -73,7 +75,27 @@ class _SalevyAppBarState extends State<SalevyAppBar>
                 endIcon: Icons.mode_night,
                 progress: _progress,
               ),
-            ))
+            )),
+        /*Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: IconButton(
+            onPressed: () {
+              var controller = showBottomSheet(
+                  elevation: 32,
+                  context: context,
+                  builder: (context) => Padding(
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: FavoritesRoute(),
+                      ));
+
+              
+            },
+            icon: const Icon(
+              Icons.favorite_outline,
+              color: Colors.red,
+            ),
+          ),
+        )*/
       ],
     );
   }

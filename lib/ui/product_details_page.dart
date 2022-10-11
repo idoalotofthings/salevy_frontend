@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
 import 'package:salevy_frontend/ui/widgets/single_product_detail.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/data/utility_datasource.dart';
-import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
@@ -18,7 +18,7 @@ class MainRoute extends StatefulWidget {
 }
 
 class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
-  final viewModel = ThemeViewModel();
+  final viewModel = SalevyViewModel();
   late double screenWidth;
 
   @override
@@ -28,7 +28,9 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
     });
 
     return Scaffold(
-        appBar: SalevyAppBar(title: "Salevy",),
+        appBar: SalevyAppBar(
+          title: "Salevy",
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
