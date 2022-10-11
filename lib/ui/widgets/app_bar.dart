@@ -30,7 +30,7 @@ class _SalevyAppBarState extends State<SalevyAppBar>
 
     // Calls the build method while the animation is in progress
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2000))
+        vsync: this, duration: const Duration(milliseconds: 500))
       ..addListener(() {
         setState(() {});
       });
