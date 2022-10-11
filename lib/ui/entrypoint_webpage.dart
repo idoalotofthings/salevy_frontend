@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/data/utility_datasource.dart';
 import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
-import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
 import 'package:salevy_frontend/ui/widgets/utility_card_text.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
@@ -114,8 +113,7 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                           utilities[index],
                           index: index,
                           reverse: true,
-                          visibilityKey:
-                               Key("congrats-easter-egg$index"),
+                          visibilityKey: Key("congrats-easter-egg$index"),
                         );
                       } else {
                         return UtilityCardText(
@@ -125,10 +123,6 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                         );
                       }
                     })),
-                const Padding(
-                  padding: EdgeInsets.only(top: 16.0),
-                  child: AboutUsWidget(),
-                )
               ],
             ),
           ),
