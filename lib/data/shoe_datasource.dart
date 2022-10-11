@@ -1,5 +1,4 @@
 // Datasource file for the shoes.
-// TODO @Enjoyinbreaks, provide better descriptions
 import 'package:flutter/widgets.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
 
@@ -7,7 +6,7 @@ const shoes = [
   Shoe(
       name: "Sporty Wind",
       price: 150,
-      description: "Made with the best quality leather from the United States",
+      description: "Made with the best quality leather from the United States. Fits easily and allows you to feel the wind while playing your favourite sport. With durable soals that never leave your side so that you can be worry-free.",
       origin: "USA",
       image: AssetImage("assets/images/sporty.png")),
   Shoe(
