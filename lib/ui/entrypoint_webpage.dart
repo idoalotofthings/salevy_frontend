@@ -1,6 +1,8 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/data/utility_datasource.dart';
+import 'package:salevy_frontend/ui/query_form_page.dart';
 import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
@@ -30,6 +32,11 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
     return Scaffold(
         appBar: SalevyAppBar(
           title: "Salevy",
+        ),
+        floatingActionButton: OpenContainer(
+          closedBuilder: (_, action) => FloatingActionButton(
+              onPressed: action, child: const Icon(Icons.message)),
+          openBuilder: (context, _) => const QueryFormRoute(),
         ),
         body: Center(
           child: SingleChildScrollView(
