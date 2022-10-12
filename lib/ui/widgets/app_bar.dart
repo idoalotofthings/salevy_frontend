@@ -58,24 +58,27 @@ class _SalevyAppBarState extends State<SalevyAppBar>
       ),
       toolbarHeight: 110,
       actions: [
-        Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: IconButton(
-              onPressed: () {
-                if (widget.viewModel.theme.value == ThemeMode.light) {
-                  widget.viewModel.setThemeMode(ThemeMode.dark);
-                  _animationController.forward();
-                } else {
-                  _animationController.reverse();
-                  widget.viewModel.setThemeMode(ThemeMode.light);
-                }
-              },
-              icon: SimpleAnimatedIcon(
-                startIcon: Icons.sunny,
-                endIcon: Icons.mode_night,
-                progress: _progress,
-              ),
-            )),
+        Tooltip(
+          message: "Switch Theme",
+          child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: IconButton(
+                onPressed: () {
+                  if (widget.viewModel.theme.value == ThemeMode.light) {
+                    widget.viewModel.setThemeMode(ThemeMode.dark);
+                    _animationController.forward();
+                  } else {
+                    _animationController.reverse();
+                    widget.viewModel.setThemeMode(ThemeMode.light);
+                  }
+                },
+                icon: SimpleAnimatedIcon(
+                  startIcon: Icons.sunny,
+                  endIcon: Icons.mode_night,
+                  progress: _progress,
+                ),
+              )),
+        ),
         /*Padding(
           padding: const EdgeInsets.all(32.0),
           child: IconButton(

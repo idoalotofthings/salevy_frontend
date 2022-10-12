@@ -33,10 +33,24 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
         appBar: SalevyAppBar(
           title: "Salevy",
         ),
-        floatingActionButton: OpenContainer(
-          closedBuilder: (_, action) => FloatingActionButton(
-              onPressed: action, child: const Icon(Icons.message)),
-          openBuilder: (context, _) => const QueryFormRoute(),
+        floatingActionButton: SizedBox(
+          height: 80,
+          width: 80,
+          child: OpenContainer(
+            closedShape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            transitionDuration: const Duration(milliseconds: 500),
+            closedBuilder: (_, action) => Tooltip(
+              message: "Customer Support",
+              child: FloatingActionButton(
+                  onPressed: action,
+                  child: const Icon(
+                    Icons.message,
+                    size: 50,
+                  )),
+            ),
+            openBuilder: (context, _) => const QueryFormRoute(),
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(
