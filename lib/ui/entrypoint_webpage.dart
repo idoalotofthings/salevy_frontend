@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/data/utility_datasource.dart';
 import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
 import 'package:salevy_frontend/ui/widgets/utility_card_text.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
