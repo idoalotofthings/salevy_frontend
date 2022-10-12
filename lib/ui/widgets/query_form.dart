@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salevy_frontend/ui/widgets/submission_alert_dialog.dart';
 
 class QueryFormWidget extends StatelessWidget {
   final int width;
@@ -79,37 +80,9 @@ class QueryFormWidget extends StatelessWidget {
                               showDialog(
                                   context: context,
                                   builder: (dialogueContext) {
-                                    return AlertDialog(
-                                        content: SizedBox(
-                                      height: 150,
-                                      width: 400,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "Your feedback has been sent",
-                                            style: GoogleFonts.adventPro(
-                                                fontSize: 32),
-                                          ),
-                                          Align(
-                                            alignment: Alignment.bottomRight,
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 70.0),
-                                              child: TextButton(
-                                                onPressed: () {
-                                                  Navigator.pop(
-                                                      dialogueContext);
-                                                  Navigator.pop(context);
-                                                },
-                                                child: const Text("Return"),
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ));
+                                    return SubmissionAlertDialog(
+                                        routeContext: dialogueContext
+                                    );
                                   });
                             },
                             child: Text(
