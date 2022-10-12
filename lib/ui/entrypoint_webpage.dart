@@ -1,11 +1,16 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/data/utility_datasource.dart';
-import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/query_form_page.dart';
+import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
+import 'package:salevy_frontend/ui/widgets/accessibility_snackbar.dart';
+import 'package:salevy_frontend/ui/widgets/app_bar.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
 import 'package:salevy_frontend/ui/widgets/utility_card_text.dart';
-import 'package:simple_animated_icon/simple_animated_icon.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+import '../dev/ext/buildcontext_ext.dart';
 
 // Entrypoint webpage of the application.
 class MainRoute extends StatefulWidget {
@@ -18,91 +23,80 @@ class MainRoute extends StatefulWidget {
 }
 
 class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
-  final viewModel = ThemeViewModel();
+  static bool infoHasBeenShown = false;
+  final viewModel = SalevyViewModel();
   late double screenWidth;
-
-  late AnimationController
-      _animationController; // AnimationController for the theme icon
-  late Animation<double> _progress;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // Calls the build method while the animation is in progress
-    _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2000))
-      ..addListener(() {
-        setState(() {});
-      });
-
-    _progress = Tween<double>(begin: 0, end: 1).animate(_animationController);
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     setState(() {
       screenWidth = MediaQuery.of(context).size.width;
     });
-    _progress = Tween<double>(begin: 0, end: 10).animate(_animationController);
 
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              "Salevy",
-              style: GoogleFonts.passionsConflict(fontSize: 90),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          toolbarHeight: 110,
-          actions: [
-            Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: IconButton(
-                  onPressed: () {
-                    if (viewModel.theme.value == ThemeMode.light) {
-                      viewModel.theme.value = ThemeMode.dark;
-                      _animationController.forward();
-                    } else {
-                      _animationController.reverse();
-                      viewModel.theme.value = ThemeMode.light;
-                    }
-                  },
-                  icon: SimpleAnimatedIcon(
-                    startIcon: Icons.sunny,
-                    endIcon: Icons.mode_night,
-                    progress: _progress,
-                  ),
-                ))
-          ],
+        appBar: SalevyAppBar(
+          title: "Salevy",
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                    padding: const EdgeInsets.only(bottom: 21.0),
-                    child: Container(
-                        height: 500,
-                        width: screenWidth,
-                        alignment: Alignment.topCenter,
-                        child: const ProductShowcaseWidget())),
-                Padding(
-                  padding: const EdgeInsets.all(21.0),
-                  child: Text(
-                    "Sneakers for Everyone!",
-                    style: GoogleFonts.passionsConflict(
-                        fontSize: 64, fontWeight: FontWeight.bold),
+        floatingActionButton: SizedBox(
+          height: 80,
+          width: 80,
+          child: OpenContainer(
+            closedShape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            transitionDuration: const Duration(milliseconds: 500),
+            closedBuilder: (_, action) => Tooltip(
+              message: "Customer Support",
+              child: FloatingActionButton(
+                  onPressed: action,
+                  child: const Icon(
+                    Icons.message,
+                    size: 50,
+                  )),
+            ),
+            openBuilder: (context, _) => const QueryFormRoute(),
+          ),
+        ),
+        body: VisibilityDetector(
+          key: const Key("key@key"),
+          onVisibilityChanged: (_) {
+            if (!infoHasBeenShown) {
+              context.showSnackbar(accessibilitySnackbar(context,
+                  "Welcome to Salevy! Click on a shoe to view its details", () {
+                context.hideCurrentSnackbar();
+                context.showSnackbar(accessibilitySnackbar(context,
+                    "Click on the 'sun' icon at the top right of the window to toggle between themes",
+                    () {
+                  context.hideCurrentSnackbar();
+                  context.showSnackbar(accessibilitySnackbar(context,
+                      "Facing any issue? Click on the customer support icon just above this notification, to the right",
+                      () {
+                    context.hideCurrentSnackbar();
+                  }, buttonText: "Done"));
+                }));
+              }));
+
+              infoHasBeenShown = true;
+            }
+          },
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.only(bottom: 21.0),
+                      child: Container(
+                          height: 500,
+                          width: screenWidth,
+                          alignment: Alignment.topCenter,
+                          child: const ProductShowcaseWidget())),
+                  Padding(
+                    padding: const EdgeInsets.all(21.0),
+                    child: Text(
+                      "Sneakers for Everyone!",
+                      style: GoogleFonts.passionsConflict(
+                          fontSize: 64, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
                 ListView.builder(
@@ -129,6 +123,7 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                    child: AboutUsWidget(),
                  )
               ],
+                  
             ),
           ),
         ));

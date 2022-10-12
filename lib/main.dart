@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:salevy_frontend/theme/color_schemes.dart';
 import 'package:salevy_frontend/ui/entrypoint_webpage.dart';
-import 'package:salevy_frontend/ui/viewmodel/theme_viewmodel.dart';
+import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 
 void main(List<String> args) {
   runApp(const SalevyApp());
@@ -16,7 +16,7 @@ class SalevyApp extends StatefulWidget {
 
 class _SalevyAppState extends State<SalevyApp> {
   var themeMode = ThemeMode.light; //  this is now the member of the State.
-  final viewModel = ThemeViewModel();
+  final viewModel = SalevyViewModel();
 
   @override
   Widget build(BuildContext context) {

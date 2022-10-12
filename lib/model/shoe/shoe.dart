@@ -1,5 +1,6 @@
 import 'package:annotations/annotations.dart';
 import 'package:flutter/widgets.dart';
+import 'package:salevy_frontend/model/review/review.dart';
 
 part "shoe.g.dart";
 
@@ -12,4 +13,6 @@ class _AbsShoe {
   late String description;
   late String origin;
   late AssetImage image;
+  late AssetImage originImage;
+  late List<Review> reviews;
 }
