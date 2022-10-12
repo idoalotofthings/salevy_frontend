@@ -5,7 +5,7 @@ SnackBar accessibilitySnackbar(
     {String buttonText = "Next"}) {
   
   var snackbar = SnackBar(
-    duration: const Duration(seconds: 10),
+    duration: const Duration(seconds: 10000),
     content: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
