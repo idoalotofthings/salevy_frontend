@@ -73,7 +73,7 @@ class _SingleProductDetailWidgetState extends State<SingleProductDetailWidget>
               Padding(
                 padding: const EdgeInsets.all(64.0),
                 child: SizedBox(
-                  height: 500,
+                  height: 600,
                   width: 400,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,7 +95,7 @@ class _SingleProductDetailWidgetState extends State<SingleProductDetailWidget>
                       Padding(
                         padding: const EdgeInsets.only(top: 64.0),
                         child: Text(
-                          "Price: \$${widget.shoe.price}",
+                          "Price: Rs. ${widget.shoe.price}",
                           style: GoogleFonts.adventPro(
                               fontSize: 64, fontWeight: FontWeight.bold),
                         ),

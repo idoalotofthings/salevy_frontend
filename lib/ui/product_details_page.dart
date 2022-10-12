@@ -28,7 +28,7 @@ class ProductDetailsRoute extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 1300,
-                    height: 600,
+                    height: 700,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SingleProductDetailWidget(shoe),
