@@ -2,7 +2,7 @@
 //@cc idoalotofthings idk attach list to this
 import 'package:flutter/widgets.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
-import 'package:salevy_frontend/lib/data/review_datasource.dart'
+import 'package:salevy_frontend/lib/data/review_datasource.dart';
 
 const shoes = [
   Shoe(
@@ -13,7 +13,7 @@ const shoes = [
       origin: "USA",
       image: AssetImage("assets/images/sporty.png"),
       originImage: AssetImage("assets/images/flags/usa.webp"),
-      reviews: []),
+      reviews: sportyReviews),
   Shoe(
       name: "Ocean's Wave",
       price: 200,
@@ -22,7 +22,7 @@ const shoes = [
       origin: "UK",
       image: AssetImage("assets/images/ocean.png"),
       originImage: AssetImage("assets/images/flags/uk.webp"),
-      reviews: []),
+      reviews: oceanReviews),
   Shoe(
       name: "Nightly Wear",
       price: 450,
@@ -31,7 +31,7 @@ const shoes = [
       origin: "Australia",
       image: AssetImage("assets/images/nightly.png"),
       originImage: AssetImage("assets/images/flags/aus.jpg"),
-      reviews: []),
+      reviews: nightlyReviews),
   Shoe(
       name: "Footballer's Companion",
       price: 500,
@@ -40,7 +40,7 @@ const shoes = [
       origin: "UK",
       image:  AssetImage("assets/images/football.png"),
       originImage: AssetImage("assets/images/flags/uk.webp"),
-      reviews: []),
+      reviews: footballReviews),
   Shoe(
       name: "Mountaineer's Companion",
       price: 500,
@@ -49,7 +49,7 @@ const shoes = [
       origin: "Canada",
       image:  AssetImage("assets/images/mountain.png"),
       originImage: AssetImage("assets/images/flags/canada.png"),
-      reviews: []),
+      reviews: mountainReviews),
   Shoe(
       name: "On The Go",
       price: 300,
@@ -58,7 +58,7 @@ const shoes = [
       origin: "India",
       image:  AssetImage("assets/images/onthego.png"),
       originImage: AssetImage("assets/images/flags/india.webp"),
-      reviews: []),
+      reviews: onthegoReviews),
   Shoe(
       name: "Loafers",
       price: 350,
@@ -67,7 +67,7 @@ const shoes = [
       origin: 'Germany',
       image:  AssetImage("assets/images/loafers.png"),
       originImage: AssetImage("assets/images/flags/germany.webp"),
-      reviews: []),
+      reviews: loafersReviews),
   Shoe(
       name: "Sandals",
       price: 550,
@@ -76,7 +76,7 @@ const shoes = [
       origin: 'Italy',
       image:  AssetImage('assets/images/pumps.png'),
       originImage: AssetImage("assets/images/flags/italy.png"),
-      reviews: []),
+      reviews: pumpsReviews),
   Shoe(
       name: 'Sliders',
       price: 150,
@@ -85,5 +85,5 @@ const shoes = [
       origin: 'India',
       image: AssetImage('assets/images/sliders.png'),
       originImage: AssetImage("assets/images/flags/india.webp"),
-      reviews: [])
+      reviews: slidersReviews)
 ];
