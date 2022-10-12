@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:simple_animated_icon/simple_animated_icon.dart';
 
-// import '../favorites_page.dart';
-
 class SalevyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final viewModel = SalevyViewModel();
 
@@ -136,26 +134,6 @@ class _SalevyAppBarState extends State<SalevyAppBar>
                 ),
               )),
         ),
-        /*Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: IconButton(
-            onPressed: () {
-              var controller = showBottomSheet(
-                  elevation: 32,
-                  context: context,
-                  builder: (context) => Padding(
-                        padding: const EdgeInsets.only(top: 32.0),
-                        child: FavoritesRoute(),
-                      ));
-
-              
-            },
-            icon: const Icon(
-              Icons.favorite_outline,
-              color: Colors.red,
-            ),
-          ),
-        )*/
       ],
     );
   }
