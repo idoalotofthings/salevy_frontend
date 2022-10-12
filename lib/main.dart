@@ -29,6 +29,7 @@ class _SalevyAppState extends State<SalevyApp> {
     });
 
     return MaterialApp(
+      title: "Salevy",
       theme: ThemeData(colorScheme: lightColorScheme, useMaterial3: true),
       darkTheme: ThemeData(colorScheme: darkColorScheme, useMaterial3: true),
       themeMode: themeMode,

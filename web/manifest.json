@@ -1,11 +1,11 @@
 {
-    "name": "salevy_frontend",
-    "short_name": "salevy_frontend",
+    "name": "Salevy",
+    "short_name": "Salevy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Website for advertising the Salevy sneakers brand.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
