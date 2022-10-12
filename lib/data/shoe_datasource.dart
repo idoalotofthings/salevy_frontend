@@ -1,6 +1,8 @@
 // Datasource file for the shoes.
+//@cc idoalotofthings idk attach list to this
 import 'package:flutter/widgets.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
+import 'package:salevy_frontend/lib/data/review_datasource.dart'
 
 const shoes = [
   Shoe(
