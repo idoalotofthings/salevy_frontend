@@ -7,6 +7,7 @@ import 'package:salevy_frontend/ui/viewmodel/viewmodel.dart';
 import 'package:salevy_frontend/ui/widgets/about_us_widget.dart';
 import 'package:salevy_frontend/ui/widgets/accessibility_snackbar.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
+import 'package:salevy_frontend/ui/widgets/customer_support_fab.dart';
 import 'package:salevy_frontend/ui/widgets/product_showcase_widget.dart';
 import 'package:salevy_frontend/ui/widgets/utility_card_text.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -37,25 +38,7 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
         appBar: SalevyAppBar(
           title: "Salevy",
         ),
-        floatingActionButton: SizedBox(
-          height: 80,
-          width: 80,
-          child: OpenContainer(
-            closedShape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            transitionDuration: const Duration(milliseconds: 500),
-            closedBuilder: (_, action) => Tooltip(
-              message: "Customer Support",
-              child: FloatingActionButton(
-                  onPressed: action,
-                  child: const Icon(
-                    Icons.message,
-                    size: 50,
-                  )),
-            ),
-            openBuilder: (context, _) => const QueryFormRoute(),
-          ),
-        ),
+        floatingActionButton: const CustomerSupportFAB(),
         body: VisibilityDetector(
             key: const Key("key@key"),
             onVisibilityChanged: (_) {
