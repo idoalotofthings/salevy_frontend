@@ -1,7 +1,7 @@
-//@idoalotofthings IDK how u will do this.
+//@idoalotofthings IDK how u will do this. 
+//@enjoyinbreaks dont worry ik 
 import 'package:salevy_frontend/model/review/review.dart';
 
-const Reviews = [
 const sportyReviews = [
   Review(
     username: "EnjoyYT", 
@@ -23,8 +23,8 @@ const sportyReviews = [
     rating:8,
     message:"Just go for it..."
   ),
-  ],
-  const oceanReviews = [
+];
+const oceanReviews = [
   Review(
     username:"Anonymous",
     rating:10,
@@ -50,8 +50,9 @@ const sportyReviews = [
     rating:9,
     message:"Binod"
   )
-  ],
-  const nightlyReviews = [
+];
+
+const nightlyReviews = [
     Review(
       username:"Abhishek",
       rating:9,
@@ -72,8 +73,8 @@ const sportyReviews = [
       rating:5,
       message:"Heaven to walk on"
     )
-  ],
-  const footballReviews = [
+];
+const footballReviews = [
     Review(
       username:"Vikas kumar",
       rating:6,
@@ -94,8 +95,9 @@ const sportyReviews = [
       rating:10,
       message:"Use it for a month and feels good and comfortable. First time it uncomfortable but after few days it's stretched and sets with my legs"
     )
-  ],
-  const mountainReviews = [
+];
+
+const mountainReviews = [
     Review(
       username:"Immanuel",
       rating:9,
@@ -116,8 +118,9 @@ const sportyReviews = [
       rating:9,
       message:"I have no words to describe this product. I love it."
     )
-  ],
-  const onthegoReviews = [
+];
+
+const onthegoReviews = [
     Review(
       username:"Duke Metternich",
       rating:10,
@@ -138,8 +141,8 @@ const sportyReviews = [
       rating:5,
       message:"Price too high."
     )
-  ],
-  const loafersReviews = [
+];
+const loafersReviews = [
     Review(
       username:"Marcus Wanner",
       rating:10,
@@ -160,8 +163,8 @@ const sportyReviews = [
       rating:10,
       message:"Shoes is good, but grey color is dull."
     )
-  ],
-  const slidersReviews = [
+];
+const slidersReviews = [
     Review(
       username:"Himesh Madaan",
       rating:9,
@@ -180,10 +183,10 @@ const sportyReviews = [
     Review(
       username:"FinancewithSharan",
       rating:10,
-      message:"Although shoe is a depreciating asset....IT's looks made me buy it."
+      message:"Although shoe is a depreciating asset....Its looks made me buy it."
     )
-  ],
-  const pumpsReviews = [
+];
+const pumpsReviews = [
     Review(
       username:"Timberman",
       rating:9,
@@ -204,5 +207,5 @@ const sportyReviews = [
       rating:10,
       message:"Even the richest woman in world (me) wears it."
     )
-  ]
 ];
+
