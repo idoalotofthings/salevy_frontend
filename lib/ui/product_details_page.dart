@@ -15,6 +15,7 @@ class ProductDetailsRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SalevyAppBar(
+        iconOnLeft: true,
         title: shoe.name,
       ),
       floatingActionButton: const CustomerSupportFAB(),

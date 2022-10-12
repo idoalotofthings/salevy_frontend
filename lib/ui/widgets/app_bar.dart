@@ -7,9 +7,11 @@ import 'package:simple_animated_icon/simple_animated_icon.dart';
 
 class SalevyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final viewModel = SalevyViewModel();
+
+  final bool iconOnLeft;
   final String title;
 
-  SalevyAppBar({required this.title, super.key});
+  SalevyAppBar({this.iconOnLeft = false, required this.title, super.key});
 
   @override
   State<SalevyAppBar> createState() => _SalevyAppBarState();
@@ -50,6 +52,7 @@ class _SalevyAppBarState extends State<SalevyAppBar>
 
   @override
   Widget build(BuildContext context) {
+    late Row appBarContents;
     if (viewModel.theme.value == ThemeMode.dark) {
       setState(() {
         _logoTint = Colors.white;
@@ -58,9 +61,35 @@ class _SalevyAppBarState extends State<SalevyAppBar>
       _logoTint = Colors.brown;
     }
 
-    return AppBar(
-      centerTitle: true,
-      title: Row(
+    if (widget.iconOnLeft) {
+      appBarContents = Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(
+            "assets/images/logo.png",
+            height: 120,
+            width: 200,
+            color: _logoTint,
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: Text(
+                    widget.title,
+                    style: GoogleFonts.passionsConflict(fontSize: 90),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    } else {
+      appBarContents = Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
@@ -78,7 +107,12 @@ class _SalevyAppBarState extends State<SalevyAppBar>
             ),
           ),
         ],
-      ),
+      );
+    }
+
+    return AppBar(
+      centerTitle: true,
+      title: appBarContents,
       toolbarHeight: 110,
       actions: [
         Tooltip(
