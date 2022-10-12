@@ -34,7 +34,7 @@ class ProductDetailsRoute extends StatelessWidget {
                   SizedBox(
                     height: 500,
                     child: ListView.builder(
-                      itemCount: 1,
+                      itemCount: shoe.reviews.length,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
