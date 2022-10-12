@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/ui/widgets/submission_alert_dialog.dart';
@@ -77,13 +79,50 @@ class QueryFormWidget extends StatelessWidget {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              showDialog(
-                                  context: context,
-                                  builder: (dialogueContext) {
-                                    return SubmissionAlertDialog(
-                                        routeContext: dialogueContext
-                                    );
-                                  });
+                              if (_mailIdController.text.isEmpty ||
+                                  _usernameController.text.isEmpty ||
+                                  _messageController.text.isEmpty) {
+                                showDialog(
+                                    context: context,
+                                    builder: ((context) {
+                                      return BackdropFilter(
+                                        filter: ImageFilter.blur(
+                                            sigmaX: 10, sigmaY: 10),
+                                        child: AlertDialog(
+                                          content: SizedBox(
+                                            width: 400,
+                                            height: 150,
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "All fields are required!",
+                                                  style: GoogleFonts.adventPro(
+                                                      fontSize: 32),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 70),
+                                                  child: TextButton(
+                                                      onPressed: () {
+                                                        Navigator.pop(context);
+                                                      },
+                                                      child: const Text("Ok")),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }));
+                              } else {
+                                showDialog(
+                                    context: context,
+                                    builder: (dialogueContext) {
+                                      return SubmissionAlertDialog(
+                                          routeContext: dialogueContext);
+                                    });
+                              }
                             },
                             child: Text(
                               "Submit",
