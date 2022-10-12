@@ -72,7 +72,12 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                         "Facing any issue? Click on the customer support icon just above this notification, to the right",
                         () {
                       context.hideCurrentSnackbar();
-                    }, buttonText: "Done"));
+                      context.showSnackbar(accessibilitySnackbar(context,
+                          "Scroll to the bottom of the page for developers' identity",
+                          () {
+                        context.hideCurrentSnackbar();
+                      }, buttonText: "Done"));
+                    }));
                   }));
                 }));
 

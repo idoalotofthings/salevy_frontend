@@ -14,21 +14,11 @@ class ReviewWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
-          children: [
-            const SizedBox(
-              width: 650,
-            ),
-            Text(
-              "Reviews",
-              style: GoogleFonts.adventPro(
-                  fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              width: 400,
+            ),
             Text(
               review.username,
               style: GoogleFonts.adventPro(

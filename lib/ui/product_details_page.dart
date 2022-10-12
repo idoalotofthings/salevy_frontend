@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
 import 'package:salevy_frontend/ui/widgets/review_widget.dart';
@@ -30,6 +31,11 @@ class ProductDetailsRoute extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: SingleProductDetailWidget(shoe),
                     ),
+                  ),
+                  Text(
+                    "Reviews",
+                    style: GoogleFonts.adventPro(
+                        fontSize: 32, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 500,
