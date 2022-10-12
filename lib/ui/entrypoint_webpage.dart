@@ -123,6 +123,10 @@ class _MainRouteState extends State<MainRoute> with TickerProviderStateMixin {
                         );
                       }
                     })),
+                    const Padding(
+                   padding: EdgeInsets.only(top: 16.0),
+                   child: AboutUsWidget(),
+                 )
               ],
             ),
           ),
