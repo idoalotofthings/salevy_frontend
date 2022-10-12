@@ -24,6 +24,10 @@ class _SalevyAppBarState extends State<SalevyAppBar>
       _animationController; // AnimationController for the theme icon
   late Animation<double> _progress;
 
+  final viewModel = SalevyViewModel();
+
+  Color _logoTint = Colors.brown;
+
   @override
   void initState() {
     super.initState();
@@ -46,15 +50,34 @@ class _SalevyAppBarState extends State<SalevyAppBar>
 
   @override
   Widget build(BuildContext context) {
+    if (viewModel.theme.value == ThemeMode.dark) {
+      setState(() {
+        _logoTint = Colors.white;
+      });
+    } else {
+      _logoTint = Colors.brown;
+    }
+
     return AppBar(
       centerTitle: true,
-      title: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          widget.title,
-          style: GoogleFonts.passionsConflict(fontSize: 90),
-          textAlign: TextAlign.center,
-        ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            "assets/images/logo.png",
+            height: 120,
+            width: 200,
+            color: _logoTint,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(1.0),
+            child: Text(
+              widget.title,
+              style: GoogleFonts.passionsConflict(fontSize: 90),
+              textAlign: TextAlign.start,
+            ),
+          ),
+        ],
       ),
       toolbarHeight: 110,
       actions: [
