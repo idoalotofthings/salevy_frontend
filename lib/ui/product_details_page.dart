@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salevy_frontend/data/review_datasource.dart';
 import 'package:salevy_frontend/model/shoe/shoe.dart';
 import 'package:salevy_frontend/ui/widgets/app_bar.dart';
 import 'package:salevy_frontend/ui/widgets/review_widget.dart';
@@ -39,7 +38,7 @@ class ProductDetailsRoute extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: ReviewWidget(reviews[index]),
+                          child: ReviewWidget(shoe.reviews[index]),
                         );
                       },
                     ),
