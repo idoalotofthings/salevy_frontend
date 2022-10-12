@@ -9,8 +9,8 @@ class CustomerSupportFAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
-      width: 80,
+      height: 60,
+      width: 60,
       child: OpenContainer(
         closedShape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -21,7 +21,7 @@ class CustomerSupportFAB extends StatelessWidget {
               onPressed: action,
               child: const Icon(
                 Icons.message,
-                size: 50,
+                size: 30,
               )),
         ),
         openBuilder: (context, _) => const QueryFormRoute(),
